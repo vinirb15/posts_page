@@ -8,7 +8,7 @@ module.exports = {
         host: 'localhost',
         user: 'root',
         password: '1010',
-        database: 'bth',
+        database: 'teste',
         insecureAuth: true
       },
       migrations: {
