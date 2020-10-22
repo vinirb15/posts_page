@@ -4,6 +4,7 @@ const knex = require('../database/index');
 module.exports = {
     async index(req, res) {
         const results = await knex('posts')
+        .orderBy('id', 'desc')
         return res.json(results)
     },
 
@@ -41,6 +42,7 @@ module.exports = {
         .join('posts', 'posts.id', '=', 'comments.postId')
         .select('comments.*')
         .where('posts.id', id)
+        .orderBy('comments.id', 'asc')
         return res.json(results)
     },
 
