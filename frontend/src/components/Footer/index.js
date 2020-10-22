@@ -7,14 +7,14 @@ export default function Footer() {
   return (
     <footer className="footer">
     <div className="footer-social">
-      <a href="">
+      <a href="https://www.linkedin.com/in/vbueno15">
         <FaLinkedin size="40"  color="#fff"/>
       </a>
-      <a href="">
+      <a href="https://github.com/vinirb15">
         <FaGithub size="40"  color="#fff"/>
       </a>  
     </div>
-    <p className="footer-text">Made with by  Speak up Tech</p>
+    <p className="footer-text">Desafio Full Stack</p>
   </footer>
 
   )
