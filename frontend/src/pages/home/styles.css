@@ -1,0 +1,93 @@
+.posts-list {
+    max-width: 700px;
+    margin: 20px auto 0;
+    padding: 0 20px;
+}
+
+.posts-list article {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.posts-list p {
+    font-size: 16px;
+    color: #999;
+    margin-top: 5px;
+    line-height: 24px;
+}
+
+.posts-list article a {
+    height: 42px;
+    border-radius: 5px;
+    border: 2px solid #495057;
+    background: none;
+    margin-top: 10px;
+    color: #495057;
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s;
+}
+
+.posts-list article a:hover {
+    background: #495057;
+    color: #fff;
+}
+
+.posts-list .actions {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.posts-list .actions button {
+    padding: 10px;
+    border-radius: 5px;
+    border: 0;
+    background: #495057;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.posts-list .actions button:hover {
+    opacity: .8;
+}
+
+.posts-list .actions button[disabled] {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.posts-list .actions button[disabled]:hover {
+    opacity: 0.5;
+}
+
+.containerUtils {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+select, input {
+    height: 2em;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 2px solid #999;
+    background: none;
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: none;
+    color: #232323;
+}
+
+select {
+    width: 9em;
+}
