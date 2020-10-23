@@ -25,8 +25,8 @@ export default class Home extends Component {
         return (
             <div className="posts-list" >
                 <div className="containerUtils">
-                    <input
-                    />
+                    <input/>
+                    <Link to={'/post/new'}>New Post</Link>
                 </div>
 
                 {posts.map(post => (
