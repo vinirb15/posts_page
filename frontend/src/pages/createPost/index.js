@@ -16,6 +16,11 @@ export default function Create() {
             message
         }
 
+        if(data.message === ""){
+            alert('Invalid post')
+            return
+        }
+
         try {
             await api.post('/posts', data)
             history.push('/')
