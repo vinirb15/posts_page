@@ -63,10 +63,12 @@ export default class Posts extends Component {
                 <div className='utilsContainer'>
                     <textarea
                         placeholder="new comment"
+                        maxLength="250"
                         value={comment}
                         onChange={e => this.createComment(e.target.value)}
                         onKeyDown={e => e.keyCode === 13 && this.sendComment(e)}
                     />
+                    <button className="button" onClick={this.sendComment} >Submit</button>
                     <Link className='button' to={'/'} >back to home</Link>
                 </div>
             </div>
