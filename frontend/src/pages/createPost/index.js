@@ -44,7 +44,7 @@ export default function Create() {
                     <button className="button" type="submit">Submit</button>
                 </form>
             </div>
-            <button className="buttonBack" onClick={home} type="button">Back to Home</button>
+            <button className="button buttonBack" onClick={home} type="button">Back to Home</button>
         </div>
     )
 } 
