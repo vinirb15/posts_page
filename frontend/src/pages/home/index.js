@@ -24,7 +24,7 @@ export default class Home extends Component {
         try {
             let val = event.target.value;
             const response = await api.get(`/find/${val}`);
-
+            this.setState({ page: 1 })
             this.setState({ posts: response.data });
         } catch (error) {
             this.loadPosts()
