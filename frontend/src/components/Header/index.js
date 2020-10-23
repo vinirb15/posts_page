@@ -1,14 +1,15 @@
-import React from 'react';
-import { Navbar, Nav } from 'react-bootstrap'
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React, { Component } from 'react';
 
-const Header = () =>
-    <Navbar bg="dark" variant="dark">
-        <Navbar.Brand href="#home">Navbar</Navbar.Brand>
-        <Nav className="mr-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#features">Features</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
-        </Nav>
-    </Navbar>
-export default Header;
+import './styles.css';
+
+
+export default class Header extends Component {
+
+    render() {
+        return (
+            <div className="header">
+                <h1 className="logo">Desafio Full Stack</h1>
+            </div>
+        )
+    }
+}
