@@ -14,9 +14,21 @@ export default class Home extends Component {
         this.loadPosts();
     }
 
+    searchProduct = async (event) => {
+        try {
+            let val = event.target.value;
+            const response = await api.get(`/find/${val}`);
+
+            this.setState({ posts: response.data });
+        } catch (error) {
+            this.loadPosts()
+        }
+
+    }
+
     loadPosts = async () => {
         const response = await api.get('/posts')
-        this.setState({posts: response.data})
+        this.setState({ posts: response.data })
     }
 
     render() {
@@ -25,7 +37,9 @@ export default class Home extends Component {
         return (
             <div className="posts-list" >
                 <div className="containerUtils">
-                    <input/>
+                    <input
+                        onChange={this.searchProduct}
+                    />
                     <Link to={'/post/new'}>New Post</Link>
                 </div>
 
