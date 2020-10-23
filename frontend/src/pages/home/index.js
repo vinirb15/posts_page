@@ -20,7 +20,7 @@ export default class Home extends Component {
         this.setState({ posts: response.data })
     }
 
-    searchProduct = async (event) => {
+    searchPost = async (event) => {
         try {
             let val = event.target.value;
             const response = await api.get(`/find/${val}`);
@@ -60,7 +60,7 @@ export default class Home extends Component {
                 <div className="containerUtils">
                     <input
                         placeholder="Search"
-                        onChange={this.searchProduct}
+                        onChange={this.searchPost}
                     />
                     <Link to={'/post/new'}>New Post</Link>
                 </div>
