@@ -3,9 +3,16 @@ const knex = require('../database/index');
 
 module.exports = {
     async index(req, res) {
-        const results = await knex('posts')
-        .orderBy('id', 'desc')
-        return res.json(results)
+        try {
+            const { page = 1 } = req.query;
+
+            const results = await knex('posts')
+                .limit(6)
+                .offset((page - 1) * 6)
+            return res.json(results)
+        } catch (error) {
+            next(error)
+        }
     },
 
     async single(req, res, next) {
@@ -25,7 +32,7 @@ module.exports = {
             const { title } = req.params
             const results = await knex('posts')
                 .select('*')
-                .where('message', 'like', '%'+title+'%')
+                .where('message', 'like', '%' + title + '%')
             return res.json(results)
         } catch (error) {
             next(error);
@@ -37,9 +44,9 @@ module.exports = {
 
         try {
             await knex('posts')
-            .insert({
-                message
-            })
+                .insert({
+                    message
+                })
             return res.status(201).send()
 
         } catch (error) {
@@ -51,10 +58,10 @@ module.exports = {
         const { id } = req.params
 
         const results = await knex('comments')
-        .join('posts', 'posts.id', '=', 'comments.postId')
-        .select('comments.*')
-        .where('posts.id', id)
-        .orderBy('comments.id', 'asc')
+            .join('posts', 'posts.id', '=', 'comments.postId')
+            .select('comments.*')
+            .where('posts.id', id)
+            .orderBy('comments.id', 'asc')
         return res.json(results)
     },
 
@@ -64,10 +71,10 @@ module.exports = {
 
         try {
             await knex('comments')
-            .insert({
-                postId: id,
-                comment
-            })
+                .insert({
+                    postId: id,
+                    comment
+                })
             return res.status(201).send()
 
         } catch (error) {
