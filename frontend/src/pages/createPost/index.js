@@ -24,13 +24,13 @@ export default function Create() {
         }
     }
 
-    function home(e){
+    function home(e) {
         e.preventDefault();
         history.push('/')
     }
 
     return (
-        <div className="new-incident">
+        <div className="new-post">
             <div className="content">
 
                 <form onSubmit={newPost}>
@@ -42,9 +42,9 @@ export default function Create() {
 
                     />
                     <button className="button" type="submit">Submit</button>
+                    <button className="button buttonBack" onClick={home} type="button">Back to Home</button>
                 </form>
             </div>
-            <button className="button buttonBack" onClick={home} type="button">Back to Home</button>
         </div>
     )
 } 

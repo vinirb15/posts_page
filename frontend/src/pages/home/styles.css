@@ -1,26 +1,28 @@
+html {
+    font-size: 62.5%;
+}
+
 .posts-list {
-    max-width: 700px;
-    margin: 20px auto 0;
-    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    justify-content: center;
+    width: 80%;
+    margin: 2rem auto 0;
+    padding: 0 2rem;
 }
 
 .posts-list article {
     background: #fff;
     border: 1px solid #ddd;
     border-radius: 5px;
-    padding: 20px;
-    margin-top: 20px;
-}
-
-.posts-list p {
-    font-size: 16px;
-    color: #999;
-    margin-top: 5px;
-    line-height: 24px;
+    padding: 2rem;
+    margin-top: 2rem;
 }
 
 .posts-list article a {
-    height: 42px;
+    height: 4rem;
+    width: 50%;
     border-radius: 5px;
     border: 2px solid #495057;
     background: none;
@@ -33,6 +35,8 @@
     justify-content: center;
     align-items: center;
     transition: all 0.2s;
+    max-width: 30%;
+    margin: 2rem auto 0;
 }
 
 .posts-list article a:hover {
@@ -40,34 +44,23 @@
     color: #fff;
 }
 
-.posts-list .actions {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
+.posts-list h2 {
+    font-size: 2.5rem;
 }
 
-.posts-list .actions button {
-    padding: 10px;
+.posts-list button {
+    padding: 1rem;
     border-radius: 5px;
     border: 0;
     background: #495057;
     color: #fff;
-    font-size: 16px;
+    font-size: 1.6rem;
     font-weight: bold;
     cursor: pointer;
 }
 
-.posts-list .actions button:hover {
+.posts-list button:hover {
     opacity: .8;
-}
-
-.posts-list .actions button[disabled] {
-    opacity: 0.5;
-    cursor: pointer;
-}
-
-.posts-list .actions button[disabled]:hover {
-    opacity: 0.5;
 }
 
 .containerUtils {
@@ -108,4 +101,15 @@ input {
 .containerUtils a:hover {
     background: #495057;
     color: #fff;
+}
+
+@media (max-width: 760px) {
+    .posts-list h2 {
+        font-size: 1.5rem;
+    }
+
+    .posts-list article a {
+        font-size: 1.5rem;
+        height: 3rem;
+    }
 }

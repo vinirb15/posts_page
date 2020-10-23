@@ -61,7 +61,7 @@ export default class Posts extends Component {
                     </article>
                 ))}
                 <div className='utilsContainer'>
-                    <input
+                    <textarea
                         placeholder="new comment"
                         value={comment}
                         onChange={e => this.createComment(e.target.value)}
