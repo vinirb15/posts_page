@@ -20,6 +20,18 @@ module.exports = {
         }
     },
 
+    async find(req, res, next) {
+        try {
+            const { title } = req.params
+            const results = await knex('posts')
+                .select('*')
+                .where('message', 'like', '%'+title+'%')
+            return res.json(results)
+        } catch (error) {
+            next(error);
+        }
+    },
+
     async create(req, res, next) {
         const { message } = req.body
 
