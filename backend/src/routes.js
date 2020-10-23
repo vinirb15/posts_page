@@ -5,6 +5,7 @@ const MessageController = require('./controllers/MessageController');
 
 routes.get('/posts', MessageController.index);
 routes.get('/posts/:id', MessageController.single);
+routes.get('/find/:title', MessageController.find);
 routes.post('/posts', MessageController.create);
 routes.get('/posts/:id/comments', MessageController.comments);
 routes.post('/posts/:id/comments', MessageController.createMenssage);
