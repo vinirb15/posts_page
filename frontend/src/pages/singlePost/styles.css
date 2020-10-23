@@ -20,3 +20,17 @@
 .post-info p a {
     color: #069;
 }
+
+.button {
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    border: 0;
+    background: #495057;
+    color: #fff;
+    margin-left: 2em;
+}
+
+.utilsContainer {
+    margin-top: 2em;
+}

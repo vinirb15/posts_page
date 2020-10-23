@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 import api from '../../services/api';
 
 import './styles.css';
@@ -39,8 +40,8 @@ export default class Posts extends Component {
 
         try {
             await api.post(`/posts/${id}/comments`, data)
-            this.setState({comments: [...this.state.comments, data]})
-            this.setState({comment: ""})
+            this.setState({ comments: [...this.state.comments, data] })
+            this.setState({ comment: "" })
         } catch (error) {
             console.log(error)
             alert('error when registering');
@@ -59,13 +60,15 @@ export default class Posts extends Component {
                         <p>{cmt.comment}</p>
                     </article>
                 ))}
-
-                <input
-                    placeholder="new comment"
-                    value={ comment }
-                    onChange={e => this.createComment(e.target.value)}
-                    onKeyDown={e => e.keyCode === 13 && this.sendComment(e)}
-                />
+                <div className='utilsContainer'>
+                    <input
+                        placeholder="new comment"
+                        value={comment}
+                        onChange={e => this.createComment(e.target.value)}
+                        onKeyDown={e => e.keyCode === 13 && this.sendComment(e)}
+                    />
+                    <Link className='button' to={'/'} >back to home</Link>
+                </div>
             </div>
         );
     };
