@@ -5,8 +5,9 @@ import './styles.css';
 
 export default class Posts extends Component {
     state = {
-        posts: {},
-        comments: {},
+        posts: [],
+        comments: [],
+        comment: [],
     };
 
     async componentDidMount() {
@@ -17,19 +18,54 @@ export default class Posts extends Component {
         this.setState({ posts: response.data[0] })
 
         const responses = await api.get(`/posts/${id}/comments`)
-        console.log(responses.data[0])
-        if(!!responses.data[0])
-        this.setState({ comments: responses.data[0] })
+        if (!!responses.data[0])
+            this.setState({ comments: responses.data })
     }
 
+    createComment = (event) => {
+
+        this.setState({ comment: event });
+
+    }
+
+    sendComment = async (e) => {
+        e.preventDefault();
+
+        const { id } = this.props.match.params;
+        const { comment } = this.state
+        const data = {
+            "comment": `${comment}`
+        }
+
+        try {
+            await api.post(`/posts/${id}/comments`, data)
+            this.setState({comments: [...this.state.comments, data]})
+            this.setState({comment: ""})
+        } catch (error) {
+            console.log(error)
+            alert('error when registering');
+        }
+    }
 
     render() {
-        const { posts, comments } = this.state;
+        const { posts, comments, comment } = this.state;
 
         return (
             <div className="post-info">
                 <h1>{posts.message}</h1>
-                <p>{comments.comment}</p>
+
+                {comments.map(cmt => (
+                    <article key={cmt.id}>
+                        <p>{cmt.comment}</p>
+                    </article>
+                ))}
+
+                <input
+                    placeholder="new comment"
+                    value={ comment }
+                    onChange={e => this.createComment(e.target.value)}
+                    onKeyDown={e => e.keyCode === 13 && this.sendComment(e)}
+                />
             </div>
         );
     };
