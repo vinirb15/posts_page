@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import Home from './pages/home';
-import Posts from './pages/singlePost';
+import Posts from './pages/comments';
 import Create from './pages/createPost';
 
 const Routes = () => (

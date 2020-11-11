@@ -35,12 +35,25 @@ html {
 .utilsContainer {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
     margin-top: 3rem;
 }
 
-textarea {
-    width: 20rem;
-    height: 10rem;
+.utilsContainer a {
+    display: flex;
+    align-items: center;
+    margin: 0 1rem;
+}
+
+.utilsContainer button {
+    margin: 0 1rem;
+}
+
+.utilsContainer textarea {
+    width: 50%;
+    height: 5rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2rem;
 }
 
 @media (max-width: 760px) {

@@ -106,7 +106,7 @@ input {
 .actions {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px;
+    margin-top: 3rem;
 }
 
 .actions button:hover {

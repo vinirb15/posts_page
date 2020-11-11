@@ -69,7 +69,7 @@ export default class Posts extends Component {
                         onKeyDown={e => e.keyCode === 13 && this.sendComment(e)}
                     />
                     <button className="button" onClick={this.sendComment} >Submit</button>
-                    <Link className='button' to={'/'} >back to home</Link>
+                    <Link className='button' to={'/'} >Back to home</Link>
                 </div>
             </div>
         );

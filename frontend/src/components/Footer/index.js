@@ -14,7 +14,7 @@ export default function Footer() {
         <FaGithub size="40"  color="#fff"/>
       </a>  
     </div>
-    <p className="footer-text">Desafio Full Stack</p>
+    <p className="footer-text">@2020</p>
   </footer>
 
   )
